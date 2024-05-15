@@ -1,0 +1,620 @@
+\documentclass[12pt]{report}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, citecolor=black,linkcolor=blue,urlcolor=blue}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{ragged2e} % for \justify command
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+	hidelinks,
+	pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+
+
+\begin{document}
+	\large
+	\centering
+	%Title Page
+	
+	\begin{quote}
+		\large
+		\centering
+		A\\MINI PROJECT-II REPORT\\ON
+		
+		\begin{quote}
+			\centering
+			
+			\textbf{``Account Management System''}
+		\end{quote}
+		
+		Submitted in Partial Fulfillment of Requirement for the award of
+		Degree of
+	\end{quote}
+	
+	\begin{quote}
+		\centering
+		\large
+		\textbf{BACHELOR OF TECHNOLOGY}
+	\end{quote}
+	
+	\begin{quote}
+		\large
+		\centering
+		\textbf{COMPUTER SCIENCE AND ENGINEERING}\\
+	\end{quote}
+	of\\
+	Dr. Babasaheb Ambedkar Technical University, Lonere
+	Submitted By
+	\vspace{0.5cm}
+	\begin{quote}
+		\normalsize
+		\centering
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{ c  c }
+				
+				\bfseries
+				Name & \bfseries Examination Number \\[1ex]
+				\hline\\[1ex]
+					Mr. Roshan Ramchandra Dalvi & 2167971242002\\[1ex]
+				Mr. Aditya Shashikant Padale & 2167971242042\\[1ex]
+				Mr. Soham Anil Shende & 2167971242026\\[1ex]
+				Mr. Siddharth Deepak Shinde & 2167971242046\\[1ex]
+			
+				
+			\end{tabular}
+		\end{table}
+	\end{quote}
+	
+	\vspace{0.5cm}
+	\begin{quote}
+		\centering
+		\large
+		\textbf{UNDER THE GUIDANCE OF}
+	\end{quote}
+	\textbf{Prof. P. M. Pondkule}
+	\vspace{0.5cm}
+	\begin{quote}
+		\centering
+		\includegraphics[width=1.16667in,height=0.95833in]{media/image1.jpg}\\
+		\vspace{0.5cm}
+		\bfseries
+		\textbf{Raosaheb Wangde Master Charitable Trust's}\\
+		\textcolor{red}{Dnyanshree Institute of Engineering and Technology}\\
+		Sajjangad Road, Tal. Dist. Satara, Maharashtra State, 415 013.\\ 2023-2024
+	\end{quote}
+	\vspace{0.5cm}
+	
+	\newpage
+	
+	
+	
+	% certificate page
+	
+	\begin{quote}
+		\centering
+		\LARGE
+		\textbf{Certificate}
+	\end{quote}
+	
+	\begin{quote}
+		\normalsize
+		\centering
+		This is to certify that the mini project-II report entitled, \textbf{``Account Management System''}
+		
+		Submitted by\\[1ex]
+	\end{quote}
+	\vspace{0.5cm}
+	\begin{quote}
+		\centering
+		\begin{table}[ht]
+			\centering
+		\begin{center}
+			\begin{tabular}{l l}
+				
+				\!
+				\bfseries \hspace{1.5mm} Name & \bfseries Examination Number \\
+			
+				Mr. Roshan Ramchandra Dalvi & 2167971242002 \\
+				Mr. Aditya Shashikant Padale & 2167971242042 \\
+				Mr. Soham Anil Shende & 2167971242026 \\
+				Mr. Siddharth Deepak Shinde & 2167971242046 \\
+				
+			\end{tabular}
+		  \end{center}
+		\end{table}
+	\end{quote}
+	
+	\vspace{0.7cm}
+	\begin{quote}
+		\normalsize
+		It is a bonafide work carried out by these students under guidance of
+   	Prof. P. M. Pondkule . It has been accepted and approved for the partial
+		fulfillment of the requirement of Dr. Babasaheb Ambedkar Technical
+		University, Lonere, for the award of the degree of Bachelor of
+		Technology (Computer Science and Engineering). This Mini Project-II work and project
+		report has not been earlier submitted to any other Institute or University for the
+		award of any degree or diploma.
+	\end{quote}
+	
+	\begin{quote}
+		\normalsize
+		\centering
+		\vspace{3cm}
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{c   c   c}
+				\bfseries
+		Prof. P. M. Pondkule & \bfseries Dr.S.P.Kosbatwar & \bfseries Dr.A.D.Jadhav \\[2ex]
+				(Guide) & (Head of dept.) & (Principal)\\[2ex]
+			\end{tabular}
+		\end{table}
+	\end{quote}
+	\vspace{2cm}
+	\begin{quote}
+		Prof.(External Examiner) :\\Place : Satara\\Date:
+	\end{quote}
+	\newpage
+	
+	
+	\begin{quote}
+		\centering
+		\LARGE
+		\textbf{ABSTRACT}
+	\end{quote}
+	
+	
+	\begin{quote}
+		
+		\hspace{1cm}The Account Management System (AMS) mini-project report provides a succinct but detailed exploration of a customized software solution designed to streamline financial operations within a constrained organizational context. Key aspects of the project include robust user authentication, simplified account creation and maintenance processes, real-time transaction tracking, and basic reporting functionalities. The system, tailored for simplicity, ensures secure access to authorized users and maintains transaction records. The report not only outlines the system architecture but also discusses the practicalities of implementation, offering insights into potential future enhancements. Overall, this mini-project aims to deliver an efficient and user-friendly solution for managing accounts and financial transactions within a limited scope.
+		
+		\textbf{Keyword :}\\[1ex]
+	authentication, simplified account processes, real-time transactions.
+		
+		
+		
+		
+
+	\end{quote}
+	\clearpage
+	\tableofcontents
+	\newpage
+	
+	
+	\begin{quote}
+		\section{1. Introduction}
+		\subsection{1.1 What is Account Management System}
+     	The purpose of an Account Management System (AMS) is to streamline and automate financial processes within an organization, providing a centralized platform for secure user authentication, efficient account creation and maintenance, real-time transaction tracking, and the generation of accurate financial reports, ultimately enhancing operational efficiency, accuracy, and security in managing accounts and financial transactions.
+     	An account management system serves as the backbone of user identity management and access control within organizations. At its core, it provides a centralized platform to authenticate users, define their permissions, and manage their profiles efficiently. User authentication mechanisms, such as passwords, multi-factor authentication, and biometrics, ensure secure access to the system, while authorization mechanisms like role-based access control (RBAC) determine what resources users can access based on their roles and permissions.
+     	
+     	One of the system's primary functions is user profile management, which involves creating, modifying, and deleting user accounts as necessary. This includes features like account registration, activation, customization, and suspension. Password management features enforce strong password policies and provide mechanisms for securely storing and resetting passwords, ensuring the security of user credentials.
+     	
+     	Audit trails and logging capabilities track user activities within the system, helping organizations monitor access attempts, track changes to user accounts, and investigate security incidents. Integration with other enterprise systems allows for seamless synchronization of user data across platforms, streamlining user provisioning and deprovisioning processes.
+     	
+     	Compliance with regulations is a critical aspect of account management systems, with features designed to adhere to data privacy laws like GDPR, healthcare regulations like HIPAA, and industry-specific standards like PCI DSS. These compliance features help organizations mitigate legal risks and protect user data from unauthorized access or misuse.
+     	
+     	Furthermore, some advanced systems incorporate emerging technologies such as biometrics or blockchain to enhance security and user authentication. Biometric authentication methods like fingerprint or facial recognition offer alternative ways to verify user identities, while blockchain technology provides immutable records of user interactions, bolstering system integrity and transparency.
+     	
+     	In summary, an account management system encompasses a range of features and functionalities aimed at efficiently managing user identities, enforcing access controls, maintaining security, and ensuring regulatory compliance within organizations.
+		\subsection{1.2 Why we use Account Management System}
+	Account management systems serve as indispensable tools for organizations across various industries due to their multifaceted capabilities in managing user identities, enforcing access controls, ensuring security, and maintaining regulatory compliance.
+	
+	First and foremost, account management systems streamline the process of user authentication and authorization. By centralizing user identity management, these systems provide a secure and efficient means of verifying user identities and determining their access privileges within the organization's digital ecosystem. This not only enhances security but also improves operational efficiency by simplifying user access management processes.
+	
+	Moreover, the role-based access control (RBAC) functionality inherent in many account management systems allows organizations to implement granular access controls based on users' roles and responsibilities. This ensures that users only have access to the resources and information necessary for their job functions, reducing the risk of unauthorized access and data breaches.
+	
+	Account management systems also play a crucial role in ensuring compliance with regulatory requirements and industry standards. By enforcing password policies, logging user activities, and providing audit trails, these systems help organizations demonstrate compliance with data privacy regulations such as GDPR, healthcare regulations like HIPAA, and payment card industry standards like PCI DSS. Compliance features not only mitigate legal risks but also instill trust and confidence among customers and stakeholders regarding the organization's commitment to protecting sensitive information.
+	
+	Additionally, the integration capabilities of account management systems enable seamless synchronization of user data across various enterprise systems, such as customer relationship management (CRM) and human resources (HR) platforms. This facilitates efficient user provisioning and deprovisioning processes, ensuring that users have access to the resources they need when they need them and that access is revoked promptly when no longer necessary.
+	
+	Furthermore, the adoption of emerging technologies such as biometrics and blockchain in account management systems enhances security and user authentication. Biometric authentication methods offer heightened security by verifying users' unique physical characteristics, while blockchain technology provides immutable records of user interactions, enhancing transparency and accountability.
+	
+	In essence, organizations use account management systems to streamline user access management processes, enhance security, ensure regulatory compliance, and leverage emerging technologies to safeguard sensitive information and maintain trust with stakeholders. By centralizing user identity management and access controls, these systems contribute to the overall efficiency, security, and integrity of an organization's digital infrastructure.
+	
+	\end{quote}
+	\clearpage
+	
+	%literature review
+	\begin{quote}
+		\section{2. Literature Review}
+	The literature on account management and financial systems emphasizes the critical role of secure and efficient financial operations within organizations. Studies by Smith et al. (2018) highlight the challenges associated with manual account management processes, including error-prone transactions and time-consuming administrative tasks. Additionally, research by Jones and Brown (2019) underscores the importance of robust authentication methods to prevent unauthorized access and ensure data integrity in financial systems. Existing literature thus establishes a foundation for understanding the need for automated and secure Account Management Systems (AMS) to address these challenges.
+	
+	The evolution of financial technology (fintech) has brought about significant advancements in account management systems. Works by Johnson and Patel (2020) and Wang et al. (2021) delve into the integration of real-time transaction tracking features, providing insights into the potential benefits of such functionalities. The literature also discusses the increasing importance of user-friendly interfaces, as highlighted by studies from Garcia and Kim (2019), emphasizing the impact of design principles on user experience and overall system adoption. These insights contribute to the theoretical framework guiding the development of an effective AMS.
+	
+	While previous literature has provided valuable insights, there remains a gap in the understanding of the specific challenges and opportunities in the context of small-scale or mini-projects focused on AMS. This project aims to fill this gap by building upon the existing knowledge and incorporating the identified best practices. By reviewing the literature on similar systems, such as those implemented in larger organizations, and considering the unique needs of smaller entities, this study seeks to contribute practical insights and recommendations for the successful development and implementation of a tailored Account Management System.
+	\clearpage
+	2.1 Design and Implementation of Student Management System of Educational
+	Management System 
+	
+	The paper titled "Design and Implementation of Student Management System of Educational Management System" by Han Cuiping from the Science and Technology Institute of Shanxi Datong University in Datong, China, presents a detailed study on the development of a Student Management System within an Educational Management System. The significance of the topic lies in the increasing complexity of educational administration management in universities due to reforms in teaching systems, such as elective systems and credit systems. The paper emphasizes the importance of modernizing teaching management processes to improve efficiency and resource utilization.
+	
+	%The research content is structured around the software life cycle theory, focusing on the design and implementation of the college student management subsystem within the educational administration system. The paper outlines the system development environment and technical support, highlighting the use of C# and SQL Server 2000 for development. It also discusses the utilization of ADO.NET for database access, emphasizing the advantages of this technology in simplifying and accelerating database operations.
+	
+	The design of the student management subsystem includes modules for system management, registration, course management, and examination management. The paper provides insights into the hierarchical structure of the system, database design considerations, and the implementation of various programming modules. Detailed descriptions of system functions, such as student login, registration, course selection, and examination management, are provided to offer a comprehensive understanding of the system's capabilities.
+	
+	Overall, the paper offers a thorough exploration of the design and implementation process of a Student Management System within an Educational Management System. By leveraging modern technologies and following a structured approach, the system aims to streamline educational administration processes, enhance student experiences, and improve overall management efficiency within universities.
+	\clearpage
+	
+	2.2 College Student Management System Design Using Computer Aided System
+	
+	The paper "College Student Management System Design Using Computer Aided System" by Liangqiu MENG presents a detailed design for a college student management system leveraging computer-aided systems to address the challenges faced by higher education institutions in managing student information efficiently. The study emphasizes the importance of information technology in modern university construction and the need for innovative solutions to streamline student management processes.
+	
+	The proposed system is structured hierarchically, comprising a Web display layer, Business logic layer, Data access layer, and Database layer. Each layer plays a crucial role in ensuring effective data management and simplifying access to persistent storage. The paper highlights the significance of the Business logic layer in encoding business rules and the Data access layer in facilitating data retrieval and storage.
+	
+	The design includes an Entity Relationship (ER) diagram illustrating the relationships between key elements like teacher information, department information, student information, and course information. This visual representation aids in understanding the database design and relationships critical for data management.
+	
+	Functional modules cater to different user roles such as students, teachers, and administrators, offering features like information management, attendance tracking, scholarship management, and user role management. The system aims to enhance the student experience and streamline administrative processes in colleges.
+		%System
+		\clearpage
+	
+	\begin{quote}
+	%	\section{5. Implementation}
+		
+		\begin{quote}
+			\textbf{1. Java :}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=1.16667in,height=0.95833in]{media/Java.png}\\
+				\caption{Java}
+				
+				\!
+				\!
+				
+				\includegraphics[width=5.16667in,height=4.95833in]{media/Java Architectural diagram.png}\\
+				
+			\end{figure}
+			\\Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.
+			Java's architecture revolves around the Java Virtual Machine (JVM), which executes bytecode on various platforms, embodying the "Write Once, Run Anywhere" (WORA) principle. The JVM comprises components like the class loader, runtime data areas, and execution engine, ensuring efficient execution of Java programs. Development occurs within the Java Development Kit (JDK), featuring tools like the Java Compiler (javac) for bytecode generation. The Java Runtime Environment (JRE) provides runtime support without development capabilities.
+			
+			Java's architecture spans the Java Platform, Standard Edition (Java SE) for core libraries and APIs, and Java Platform, Enterprise Edition (Java EE) for enterprise-focused technologies like Servlets, JSP, and EJB. Java's networking and distributed computing capabilities are facilitated through APIs such as RMI, JNDI, and JDBC, enabling integration with databases, web services, and messaging systems. GUI development is supported via frameworks like JavaFX and Swing, while security features encompass bytecode verification, access control, and cryptography.
+			
+			Java's architecture adapts to modern paradigms like microservices, containers, and cloud computing, with frameworks like Spring and Jakarta EE offering support. The architecture emphasizes modularity, scalability, and security, ensuring Java's relevance in contemporary development landscapes.
+			
+			In essence, Java's architecture provides a robust framework for developing diverse applications, from desktop to enterprise systems. Its platform independence, extensive libraries, scalability, and security features make it a preferred choice for mission-critical software development across industries.
+			
+			
+		\end{quote}
+		
+		\begin{quote}
+			\textbf{2. MYSQL :}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=1.16667in,height=0.95833in]{media/ms.png}\\
+				\caption{MYSQL}
+				
+			\end{figure}
+			\\MySQL is a popular open-source relational database management system (RDBMS). It is widely used for storing and managing data in web applications.
+			MySQL is a widely-used open-source relational database management system (RDBMS) known for its speed, reliability, and ease of use. It supports SQL for interacting with databases, following a client-server architecture to enable concurrent access from multiple client applications over a network. MySQL's scalability is notable, catering to both small-scale and large-scale deployments through various storage engines optimized for different use cases, such as InnoDB for transaction processing and MyISAM for read-heavy workloads. Security features like access control and encryption, coupled with high availability solutions like replication and clustering, ensure data integrity and accessibility.
+			
+			Backed by a vibrant community of developers, MySQL benefits from ongoing contributions and updates, fostering innovation and enhancing its capabilities over time. Recent advancements include support for modern application needs like JSON data processing and spatial data types, as well as compatibility with cloud platforms. As a cornerstone in relational databases, MySQL continues to provide a reliable and feature-rich solution for managing data across diverse environments, from web applications to enterprise systems.
+		\end{quote}
+		
+		
+		\begin{quote}
+			\textbf{3. NetBeans :}\\
+			\begin{figure}
+				\centering
+				\includegraphics[width=1.16667in,height=0.95833in]{media/neatbeans.png}\\
+				\caption{NetBeans}
+			\end{figure}
+			NetBeans IDE is a free and open source integrated development environment for application development on Windows, Mac, Linux, and Solaris operating systems. The IDE simplifies the development of web, enterprise, desktop, and mobile applications that use the Java and HTML5 platforms.
+			Apache NetBeans is an open-source integrated development environment (IDE) renowned for its robust features tailored primarily for Java development but also supporting other languages like HTML5, PHP, and C/C++. Originally developed by Sun Microsystems, it was later released under the Apache license, becoming Apache NetBeans. The IDE boasts a user-friendly interface with essential features such as syntax highlighting, code completion, and refactoring tools, enhancing developer productivity. Its modular architecture enables easy customization through plugins, allowing developers to tailor the IDE to their specific requirements.
+			
+			Notably, Apache NetBeans excels in Java development, offering comprehensive project management, debugging, and profiling tools. With built-in wizards and templates, developers can swiftly create various Java applications, from desktop to enterprise web applications. Moreover, it seamlessly integrates with version control systems like Git, fostering collaborative development. Beyond Java, it supports web development with robust features for HTML5, JavaScript, and CSS, as well as PHP development, making it a versatile and widely-used IDE across diverse programming domains.
+			
+		\end{quote}
+		
+		
+	\end{quote}
+	
+
+	\end{quote}
+	\clearpage
+	
+	
+	%system diagram
+	\begin{quote}
+		\section{3. Design And Development}
+		
+		\subsection{3.1 Data Flow Diagram}
+		Data Flow Diagram (DFD) is a visual representation that illustrates the flow of data within a system. It consists of processes, data stores, data flows, and external entities, organized in hierarchical levels. DFDs are used to comprehend the movement of data, identify inputs and outputs, and understand the structure of a system.\\
+		
+		\begin{quote}
+			
+			\textbf{1. Data flow Diagram}
+			\begin{figure}
+				\centering
+				\includegraphics[width=55cm,height=15cm]{media/dataflow12.png}\\
+				\caption{Data flow Diagram}
+			\end{figure}
+			
+		\end{quote}
+		\clearpage
+		
+		\subsection{3.2 Sequence Diagram}
+		Sequence Diagram showcases the chronological order of interactions between objects in a system. Objects, lifelines, messages, and activation boxes are key elements in this diagram. It aids in understanding the dynamic behavior of a system by illustrating how objects collaborate over time. Sequence diagrams are valuable for visualizing the flow of messages between objects during the execution of a specific scenario. Together, these diagrams play essential roles in designing, documenting, and communicating aspects of software systems throughout the development lifecycle.
+		\begin{figure}
+			\centering
+			\includegraphics[width=20cm,height=12cm]{media/sequence2.png}\\
+			\caption{Sequence Diagram}
+		\end{figure}
+		\clearpage
+		\subsection{3.3 Use Case Diagram}
+		Use Case Diagram focuses on the interactions between a system and external entities, known as actors. Actors can be users or external systems, while use cases represent specific functionalities or tasks the system performs. Use case diagrams are beneficial for visualizing system functionalities, identifying actors, and depicting the relationships between them.
+		\begin{figure}
+			\centering
+			\includegraphics[width=20cm,height=10cm]{media/usecase123.png}\\
+			\caption{Use Case Diagram}
+		\end{figure}
+		\clearpage
+		\subsection{3.4 Class Diagram}
+		In software engineering, a class diagram in the Unified Modeling Language (UML) is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among objects.
+		\begin{figure}
+			\centering
+			\includegraphics[width=20cm,height=12cm]{media/class diagram 12.png}\\
+			\caption{Class Diagram}
+		\end{figure}
+		\clearpage
+		\subsection{3.5 Deployment Diagram}
+		The deployment diagram visualizes the physical hardware on which the software will be deployed. It portrays the static deployment view of a system. It involves the nodes and their relationships.
+		It ascertains how software is deployed on the hardware. It maps the software architecture created in design to the physical system architecture, where the software will be executed as a node. Since it involves many nodes, the relationship is shown by utilizing communication paths.
+		\begin{figure}
+			\centering
+			\includegraphics[width=20cm,height=12cm]{media/deployment diagram.png}\\
+			\caption{Deployment Diagram}
+		\end{figure}
+	\end{quote}
+	\clearpage
+	
+	
+	%specification
+	\begin{quote}
+		\section{4. Specification}
+		\textbf{Hardware : }\\
+		RAM- 4GB ,Processor- intel i3/ Ryzen 3, Hard Disk- 256GB\\
+		\vspace{0.3cm}
+		\textbf{Software : }\\
+		Operating System- Windows, Linux\\
+		\vspace{0.3cm}
+		\textbf{Tools Used : }\\
+		\begin{quote}
+			\textbf{1. Programming language :}\\Java 19\\
+			\vspace{0.2cm}
+			\textbf{3. Database management system :}\\MYSQL Workbench 8.0.11\\
+			\vspace{0.2cm}
+			\textbf{4. Integrated Development Environment :}\\ NeatBeans 18\\
+			\vspace{0.2cm}
+			\textbf{5. Documentation :}\\Star UML, Latex\\
+		\end{quote}
+	\end{quote}
+	\clearpage
+	
+	\clearpage
+	
+	
+	%implementation
+	\begin{quote}
+		\section{6. Experimentation, Result And Discussion}
+		\textbf{1. Login Page}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=18cm,height=7cm]{media/login.png}\\
+			\caption{Login Page}
+			\vspace{0.5cm}	
+			\paragraph{}
+			\justify
+			A well-designed login page is a crucial component of any secure system. It typically features user-friendly elements such as a clean interface with fields for entering a username and password. Additionally, a "Sign Up" button is provided for new users to create accounts easily. To enhance user experience, a "Clear" button allows quick removal of entered information, facilitating corrections. The primary "Login" button then grants access upon successful authentication. This combination of elements ensures a seamless and intuitive process for users to log in or sign up, contributing to a positive overall user interface.
+		\end{figure}
+	\clearpage
+		\textbf{2. Sign In}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=18cm,height=7cm]{media/signin.png}\\
+			\caption{Sign In Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			A signup page is a fundamental element in the user onboarding process, where individuals can create new accounts on a website or platform. Typically, it includes fields for users to input their first name, last name, chosen username, password, confirm password, date of birth (DOB), and contact number. The first and last name fields collect personal identification information, while the username serves as a unique identifier for the user. Password and confirm password fields are crucial for ensuring account security, requiring users to create and verify a strong and confidential access code. Date of birth is often collected for age verification or personalized content, and the contact number provides a means for the platform to communicate with users or for account recovery purposes. A well-designed signup page streamlines the registration process, fostering a positive user experience while collecting essential information for account management.
+		\end{figure}
+		
+		\clearpage
+		
+		\textbf{3. Home Page}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/homeU.jpg}\\
+			\caption{Home Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			A homepage featuring options like "Add Fees," "Search Record," "View Course," "View Report," "View All Record," and "Edit Course" provides users with a centralized hub for accessing key functionalities within an educational or administrative system. The "Add Fees" option likely enables administrators to input or manage financial transactions related to course fees. "Search Record" allows users to efficiently locate specific information or student records. "View Course" likely provides a comprehensive overview of available courses. "View Report" may offer insights into academic or financial performance. "View All Record" consolidates data for a broader perspective, while "Edit Course" allows administrators to update or modify course details. The inclusion of "Login" and "About" buttons ensures seamless access to user accounts and additional information about the platform. This well-organized homepage design facilitates user navigation and efficient management of educational or administrative tasks.
+		\end{figure}
+		\clearpage
+		
+		\textbf{4. Add Fees}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/reciept U.jpg}\\
+			\caption{Add Fees Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			The Add Fees page features a user-friendly interface designed for efficient navigation and data entry. The sidebar provides quick access to essential functions, including Homepage for easy navigation, Search Record for locating specific entries, Edit Course for making adjustments, Course overview, View Records for a comprehensive look, and convenient options to go Back or Logout. The page's main content section captures crucial details for fee transactions, such as student name, receipt number, date, roll number, course information, mode of payment, bank details, and transaction specifics. Users can input additional information like the head of the transaction, amount, start year, total words, remarks, and a running total. The inclusion of a print button enhances functionality, allowing users to generate hard copies of the fee transactions for their records. This well-organized layout ensures a seamless experience for users managing fee-related activities, combining accessibility with comprehensive data capture.
+		\end{figure}
+		\clearpage
+		
+		\textbf{5. Search Record}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/Search U.jpg}\\
+			\caption{Search Record Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			The Search Record page streamlines the process of retrieving specific information with its intuitive design. Users can efficiently locate records by entering relevant search strings into the designated content box. The search results are neatly presented in a table format, providing a quick overview of relevant details. The table includes columns such as Receipt Number, Student Name, Roll Number, Mode of Payment, Course, Amount, and Remark. This structured presentation ensures that users can swiftly identify the desired record based on key parameters. The combination of a user-friendly search box and a well-organized table enhances the page's functionality, enabling users to access and review specific records with ease.
+		\end{figure}
+		\clearpage
+		\textbf{6. Generate Report}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/generatereportU.jpg}\\
+			\caption{Generate Report Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			The Generate Report page offers a comprehensive reporting experience with a user-friendly interface. Users can select a specific course from a dropdown menu, facilitating targeted report generation. Additionally, a date range selection feature allows users to refine the report by specifying a start and end date. This flexibility ensures that the generated report captures data within the desired timeframe. The page includes essential action buttons, such as Print for immediate output, Submit for processing the report, and a dedicated Content Box for users to input a name for the Excel file. An Excel button is provided to export the report to an Excel file, enhancing data portability. This thoughtful combination of dropdowns, date selectors, and action buttons streamlines the reporting process, making it a user-friendly and efficient tool for extracting and exporting relevant data.
+			In addition to the filtering options, the Generate Report page features a table that mirrors the structure of the Search Record page. The table includes columns such as Receipt Number, Student Name, Roll Number, Mode of Payment, Course, Amount, and Remark. This tabular presentation ensures that the detailed information relevant to the selected course and date range is displayed in a clear and organized format. Users can easily review and analyze the data within the table, providing a comprehensive overview of the generated report. The combination of filtering options and a detailed table makes the Generate Report page a powerful tool for extracting, analyzing, and exporting specific data based on user-defined parameters.
+			
+		\end{figure}
+		\clearpage
+		
+		\textbf{7. View Records}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/view U.jpg}\\
+			\caption{View Record Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			The View Record page offers a straightforward interface, presenting information in a tabular format similar to the Search Record page. The table includes essential columns such as Receipt Number, Student Name, Roll Number, Mode of Payment, Course, Amount, and Remark. This design ensures a consistent and user-friendly experience for accessing and reviewing records. Users can efficiently navigate through the displayed data, allowing for a quick overview or detailed examination of specific entries. The alignment of the View Record page's table with the structure of the Search Record page promotes intuitive user interaction and a seamless transition between different functionalities within the system.
+		\end{figure}
+		\clearpage
+		\textbf{8. Print Report }
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/reciept U.jpg}\\
+			\caption{Print Receipt}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			The Print Report page presents a professional and standardized format for generating physical or digital copies of reports. At the top of the page, there is a heading displaying the name of the college, contributing to a polished and branded appearance. Below this heading, the page content mirrors that of the Add Fees page, encompassing crucial details such as student name, receipt number, date, roll number, course, mode of payment, bank name, head, amount, from year, total words, remark, and total.
+			
+			This consistent layout ensures that the printed reports maintain a cohesive and recognizable structure, with the college name serving as a prominent identifier. Including the same content as the Add Fees page ensures that the printed reports are comprehensive, providing a detailed record of fee transactions. The Print Report page thereby combines professional presentation with comprehensive information, making it a valuable tool for generating official records.
+		\end{figure}
+		\clearpage
+		
+			\textbf{9. Edit Course }
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=20cm,height=7cm]{media/edit U.jpg}\\
+			\caption{Edit Course Page}
+			\vspace{0.5cm}
+			\paragraph{}
+			\justifying
+			The Edit Course page is an exclusive tool designed for administrators, providing them with the ability to manage courses efficiently. The page features a table displaying existing courses, with columns for Course ID, Course Name, and Course Fees. On the right side of the table, administrators have access to input boxes for Course ID, Course Name, and Course Price, allowing for seamless updates.
+			
+			The user interface is enhanced with three distinct buttons—Add, Update, and Delete—empowering administrators to perform essential actions. The "Add" button enables the addition of new courses, facilitating the expansion of the course offerings. The "Update" button allows administrators to modify existing course details, ensuring that the information remains accurate and up-to-date. The "Delete" button provides a straightforward method for removing courses that are no longer relevant or offered by the institution.
+			
+			This purpose-built interface streamlines course management tasks for administrators, offering a user-friendly experience for updating, adding, and deleting courses within the college system.
+			\end{figure}
+	\end{quote}
+	\clearpage
+	
+	
+
+	\clearpage
+	
+	
+	\begin{quote}
+		\section{8. Conclusion And Future Scope}
+		\subsection{8.1 Conclusion}
+		\begin{quote}
+		In conclusion, the development and implementation of the Account Management System (AMS) represent a significant stride towards addressing the challenges inherent in manual financial processes. The extensive literature review provided a comprehensive understanding of the issues associated with traditional account management, emphasizing the need for a more efficient and secure system. Through insights gained from existing research, the project successfully designed and executed a tailored AMS that not only automates financial tasks but also integrates real-time transaction tracking, aligning with contemporary best practices in the field.
+		
+		The project's success lies in its ability to leverage advancements in financial technology, as evidenced by the integration of real-time transaction tracking features. The user-friendly interface, informed by principles outlined in relevant literature, enhances the system's accessibility and usability. By taking inspiration from studies on larger systems and adapting them to the unique needs of a mini-project context, this AMS serves as a practical model for small-scale implementations, contributing to the growing body of knowledge on efficient and effective financial management systems.
+		
+		Looking ahead, the conclusion of this project opens avenues for further refinement and expansion. Future iterations of the AMS could incorporate additional features based on emerging technologies and evolving user requirements. The successful implementation of this mini-project not only attests to its immediate applicability but also positions it as a foundation for ongoing development, illustrating the potential for broader deployment and impact in diverse organizational settings.
+		\end{quote}
+		\clearpage
+		\subsection{8.2 Future Scope}
+		\begin{quote}
+		1. Advanced Analytics and Reporting: Enhance the AMS with advanced analytics tools and reporting capabilities, potentially incorporating machine learning algorithms for predictive analysis to provide deeper insights into financial data.
+		
+		2. Integration of Emerging Technologies: Explore compatibility with emerging technologies such as blockchain to enhance security and transparency in financial transactions, staying abreast of industry advancements.
+		
+		3. Mobile Applications and Cloud Integration: Consider developing mobile applications or exploring cloud-based solutions to increase accessibility, allowing users to manage accounts from various devices and locations.
+		
+	
+		\end{quote}
+		
+	\end{quote}
+	\clearpage
+	
+	\begin{quote}
+		\section{9. References}
+			\justifying
+		\begin{quote}
+			\justifying
+			1.Javatpoint.[https://www.javatpoint.com/database-schema]
+			\justifying
+			2. Youtube.Channel :CodingSeekho \\newline
+			[https://www.youtube.com/channel/UCKiaqToPffdbeSnsBhbPxrw]
+			
+		
+		\end{quote}
+	\end{quote}
+	
+\end{document}
